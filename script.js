@@ -132,6 +132,7 @@ function renderResult() {
     <h2>Quiz Complete 🎉</h2>
     <div class="score">Your Score: ${score} / ${questions.length}</div>
     <button class="btn accent" id="restart">Restart Quiz</button>
+    <div class="credits">Created by Lohith · <a href="https://x.com/lohith0001" target="_blank" rel="noopener">@lohith0001</a></div>
   `;
 
   const restartBtn = document.getElementById('restart');
@@ -145,15 +146,33 @@ function renderResult() {
 function onAnswer(e) {
   const selectedIndex = Number(e.currentTarget.getAttribute('data-index'));
   const correctIndex = questions[currentIndex].a;
-  if (selectedIndex === correctIndex) {
-    score += 1;
-  }
-  if (currentIndex + 1 < questions.length) {
-    currentIndex += 1;
-    renderQuestion();
-  } else {
-    renderResult();
-  }
+  const buttons = quizRoot.querySelectorAll('button.btn');
+
+  // Disable further clicks
+  buttons.forEach((b) => b.disabled = true);
+
+  // Apply feedback classes
+  buttons.forEach((b) => {
+    const idx = Number(b.getAttribute('data-index'));
+    if (idx === correctIndex) {
+      b.classList.add('correct');
+    }
+    if (idx === selectedIndex && idx !== correctIndex) {
+      b.classList.add('incorrect');
+    }
+  });
+
+  if (selectedIndex === correctIndex) score += 1;
+
+  // Proceed after short delay to show feedback
+  setTimeout(() => {
+    if (currentIndex + 1 < questions.length) {
+      currentIndex += 1;
+      renderQuestion();
+    } else {
+      renderResult();
+    }
+  }, 800);
 }
 
 // Initialize

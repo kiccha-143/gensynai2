@@ -1,15 +1,18 @@
 /* Gensyn Quiz Styles */
 :root {
-    --bg-start: #0f172a; /* slate-900 */
-    --bg-end: #1e293b;   /* slate-800 */
-    --card-bg: #0b1220;  /* custom dark */
-    --card-border: #334155; /* slate-700 */
-    --text: #ffffff;
-    --muted: #cbd5e1;
-    --button: #334155; /* slate-700 */
-    --button-hover: #475569; /* slate-600 */
-    --accent: #2563eb; /* blue-600 */
-    --accent-hover: #3b82f6; /* blue-500 */
+    /* Brown theme based on provided screenshot */
+    --bg-start: #1b0f0a; /* deep brown */
+    --bg-end: #1b0f0a;   /* flat for solid background */
+    --card-bg: #2a1a14;  /* dark cocoa */
+    --card-border: #5a3e30; /* muted brown */
+    --text: #f2e8dc;     /* warm off-white */
+    --muted: #c8b6a6;    /* soft beige */
+    --button: #3a271f;   /* button base */
+    --button-hover: #4a3429; /* hover */
+    --accent: #9a7b56;   /* subtle accent */
+    --accent-hover: #b08f68;
+    --correct: #1f7a1f;  /* green */
+    --incorrect: #8b2222; /* red */
 }
 
 * {
@@ -20,7 +23,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    background: var(--bg-start);
     color: var(--text);
     font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
@@ -36,7 +39,7 @@ html, body {
 .card {
     width: 100%;
     max-width: 720px;
-    background: #0f172aee; /* translucent slate */
+    background: rgba(42, 26, 20, 0.94);
     border: 1px solid var(--card-border);
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.35);
@@ -45,6 +48,10 @@ html, body {
 .card-content {
     padding: 32px;
 }
+
+.header { text-align: center; margin-bottom: 10px; }
+.title { margin: 0; font-size: 28px; letter-spacing: 1px; }
+.subtitle { margin: 6px 0 18px; color: var(--muted); }
 
 .quiz h2 {
     margin: 0 0 12px;
@@ -73,7 +80,7 @@ html, body {
     padding: 12px 14px;
     font-size: 16px;
     cursor: pointer;
-    transition: background 0.15s ease, transform 0.06s ease;
+    transition: background 0.15s ease, transform 0.06s ease, box-shadow 0.15s ease;
 }
 
 .btn:hover { background: var(--button-hover); }
@@ -81,6 +88,14 @@ html, body {
 
 .btn.accent { background: var(--accent); }
 .btn.accent:hover { background: var(--accent-hover); }
+
+/* Feedback states */
+.btn.correct { background: var(--correct) !important; box-shadow: 0 0 0 2px rgba(31,122,31,0.35) inset; }
+.btn.incorrect { background: var(--incorrect) !important; box-shadow: 0 0 0 2px rgba(139,34,34,0.35) inset; }
+
+.credits { margin-top: 14px; color: var(--muted); font-size: 14px; text-align: center; }
+.credits a { color: var(--accent-hover); text-decoration: none; }
+.credits a:hover { text-decoration: underline; }
 
 .score {
     font-size: 20px;
