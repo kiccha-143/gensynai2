@@ -120,7 +120,6 @@ function renderQuestion() {
         .map((opt, idx) => `<button class="btn" data-index="${idx}">${opt}</button>`) 
         .join('')}
     </div>
-    <div class="footer">Gensyn Quiz</div>
   `;
 
   const buttons = quizRoot.querySelectorAll('button.btn');
