@@ -2,54 +2,54 @@
 
 const questions = [
   {
-    q: 'What is Gensyn primarily building?',
+    q: 'What is the purpose of Judge in Gensyn?',
     options: [
-      'An AI chatbot platform',
-      'A verifiable compute protocol for machine learning',
-      'A centralized cloud provider',
-      'An NFT marketplace'
+      'To generate training data for SAPO',
+      'To provide cryptographically verifiable AI evaluation',
+      'To manage Minecraft gameplay data',
+      'To deploy models to GPUs automatically'
     ],
     a: 1
   },
   {
-    q: 'What does the Verde system in Gensyn do?',
+    q: 'What does SAPO do in Gensyn?',
     options: [
-      'Encrypts AI models',
-      'Verifies ML work done by untrusted nodes',
-      'Schedules compute jobs on AWS',
-      'Stores models on-chain'
+      'Plays Minecraft',
+      'Helps AI models learn faster by sharing experiences',
+      'Judges AI performance',
+      'Creates graphics'
     ],
     a: 1
   },
   {
-    q: 'What problem does Gensyn aim to solve?',
+    q: 'Which Gensyn feature tracks user contributions and progress?',
     options: [
-      'AI model copyright disputes',
-      'Centralized compute monopolies in AI training',
-      'Image generation latency',
-      'Quantum computing security'
-    ],
-    a: 1
-  },
-  {
-    q: 'Which of the following is NOT a core Gensyn component?',
-    options: [
-      'Judge',
-      'NoLoCo',
+      'SAPO',
       'Verde',
-      'TensorVault'
+      'Leaderboard',
+      'BlockAssist only'
     ],
-    a: 3
+    a: 2
   },
   {
-    q: 'What is the function of "Judge" in Gensyn?',
+    q: 'What is Verde in Gensyn?',
     options: [
-      'Evaluates AI models transparently',
-      'Hosts front-end apps',
-      'Generates datasets',
-      'Performs network routing'
+      'A Minecraft AI',
+      'A system that ensures AI evaluation can be checked and trusted',
+      'A type of model training',
+      'A leaderboard system'
     ],
-    a: 0
+    a: 1
+  },
+  {
+    q: 'What makes BlockAssist learn?',
+    options: [
+      'Watching YouTube videos',
+      'Observing the human players actions in Minecraft',
+      'Random guesses',
+      'Pre-programmed instructions only'
+    ],
+    a: 1
   },
   {
     q: 'What is unique about Gensyn’s training architecture (NoLoCo)?',
@@ -72,14 +72,14 @@ const questions = [
     a: 1
   },
   {
-    q: 'How does Gensyn ensure trust in compute results?',
+    q: 'What is common between SAPO, Judge, and BlockAssist?',
     options: [
-      'By using cryptographic verification of work',
-      'By trusting large providers',
-      'By keeping compute private',
-      'By using cloud certification'
+      'They are used for video editing',
+      'They replace humans completely',
+      'They only run on one computer',
+      'They are all AI tools that support collaboration and learning'
     ],
-    a: 0
+    a: 3
   },
   {
     q: 'What type of resources can participants contribute to Gensyn?',
@@ -92,14 +92,14 @@ const questions = [
     a: 0
   },
   {
-    q: 'What is the ultimate goal of Gensyn?',
+    q: 'Why is SAPO better than isolated model training?',
     options: [
-      'To make AI training open, verifiable, and permissionless',
-      'To build a closed AI platform',
-      'To replace blockchain technology',
-      'To centralize GPU access'
+      'Models compete and slow each other down',
+      'Models can learn from each other’s experiences, improving faster',
+      'It needs more GPUs',
+      'It only works for images'
     ],
-    a: 0
+    a: 1
   }
 ];
 
@@ -131,7 +131,7 @@ function renderResult() {
     <h2>Quiz Complete 🎉</h2>
     <div class="score">Your Score: ${score} / ${questions.length}</div>
     <button class="btn accent" id="restart">Restart Quiz</button>
-    <div class="credits">Created by Lohith · <a href="https://x.com/lohith0001" target="_blank" rel="noopener">@lohith0001</a></div>
+    <div class="credits">Created by Dilip kumar · <a href="https://x.com/KICCHA143c" target="_blank" rel="noopener">@KICCHA143C</a></div>
   `;
 
   const restartBtn = document.getElementById('restart');
@@ -176,6 +176,7 @@ function onAnswer(e) {
 
 // Initialize
 renderQuestion();
+
 
 
 

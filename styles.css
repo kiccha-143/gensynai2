@@ -8,11 +8,11 @@
     --text: #f2e8dc;     /* warm off-white */
     --muted: #c8b6a6;    /* soft beige */
     --button: #3a271f;   /* button base */
-    --button-hover: #4a3429; /* hover */
+    --button-hover: #6e2b0a; /* hover */
     --accent: #9a7b56;   /* subtle accent */
     --accent-hover: #b08f68;
     --correct: #1f7a1f;  /* green */
-    --incorrect: #920a0a; /* red */
+    --incorrect: #df2d2d; /* red */
 }
 
 * {
